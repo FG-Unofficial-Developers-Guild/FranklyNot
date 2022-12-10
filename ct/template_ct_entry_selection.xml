@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+  	Author: Ryan Hagelstrom
+	Copyright � 2022
+	This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+	https://creativecommons.org/licenses/by-sa/4.0/
+-->
+<root>
+    <template name="string_ct_effect" merge="join">
+        <stringu>
+              <script file="ct/scripts/ct_effectlabel_fn.lua"/>
+        </stringu>
+    </template>
+
+    <template name="string_ct_effect_fn">
+        <stringcontrol name="shortlabel">
+            <stringfield>
+			    <font>sheettext</font>
+			    <controlline />
+		    </stringfield>
+			<anchored>
+				<top parent="leftanchor" />
+				<left parent="leftanchor" anchor="right" relation="relative" offset="5" />
+				<right parent="rightanchor" anchor="left" relation="relative" offset="-10" />
+			</anchored>
+			<multilinespacing>20</multilinespacing>
+			<stateframe>
+				<drophilight name="fieldfocus" offset="7,5,7,5" />
+			</stateframe>
+			<droptypes>
+				<type>combattrackerentry</type>
+			</droptypes>
+		</stringcontrol>
+    </template>
+
+	<template name="string_clientct_effect_fn">
+		<simplestringc name="shortlabel">
+			<anchored height="20">
+				<top parent="leftanchor" />
+				<left parent="leftanchor" anchor="right" relation="relative" offset="5" />
+				<right parent="rightanchor" anchor="left" relation="relative" offset="-5" />
+			</anchored>
+			<readonly />
+			<script file="ct/scripts/clientct_effectlabel.lua" />
+		</simplestringc>
+	</template>
+</root>
