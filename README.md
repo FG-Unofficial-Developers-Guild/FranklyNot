@@ -1,7 +1,7 @@
 # Frankly Not
 
-**Current Version:** 1.0
-**Updated:** 12/11/22
+**Current Version:** 1.1
+**Updated:** 12/12/22
 
 Cleans up the Fantasy Grounds chat and Combat Tracker by filtering out everything after the first ; for effects.
 

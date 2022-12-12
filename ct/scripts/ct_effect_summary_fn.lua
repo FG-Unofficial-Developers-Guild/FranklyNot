@@ -10,6 +10,7 @@ function onInit()
     onEffectsChanged();
     local node = window.getDatabaseNode();
     OptionsManager.registerCallback("FRANKLY_NOT_PLAYER", onEffectsChanged);
+    DB.addHandler(DB.getPath(node, "effects"), "onChildUpdate", onEffectsChanged);
 end
 
 function onClose()
@@ -19,6 +20,7 @@ function onClose()
 
     local node = window.getDatabaseNode();
     OptionsManager.unregisterCallback("FRANKLY_NOT_PLAYER", onEffectsChanged);
+    DB.removeHandler(DB.getPath(node, "effects"), "onChildUpdate", onEffectsChanged);
 end
 
 function onEffectsChanged()
