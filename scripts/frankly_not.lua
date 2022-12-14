@@ -26,14 +26,17 @@ end
 
 function replaceEffectShortNameinMessage(sMsg)
 	local sReturn = sMsg;
-
 	if OptionsManager.isOption("FRANKLY_NOT_PLAYER", "on") then
 		local sEffect = (sMsg:match("^%s*Effect%s*%[[^%]]*%]"));
 		if sEffect then
 			sEffect = sEffect:gsub("^%s*Effect%s*%['", ""):gsub("'%]$", "");
 			local rEffect = EffectManager.parseEffect(sEffect);
 			if next(rEffect) and rEffect[1] ~= "" then
-				sEffect = rEffect[1];
+				if rEffect[1]:match("^FROMAURA") and rEffect[2] then
+					sEffect = rEffect[1] .. "; " ..rEffect[2];
+				else
+					sEffect = rEffect[1];
+				end
 				sReturn = sMsg:gsub("^%s*Effect%s*%[[^%]]*%]", "Effect ['" .. sEffect .. "']");
 			end
 		end

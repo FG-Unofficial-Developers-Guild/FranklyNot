@@ -39,7 +39,11 @@ function onValueChanged()
     local sEffect = DB.getValue(window.getDatabaseNode(), "label", "");
     local rEffect = EffectManager.parseEffect(sEffect);
     if next(rEffect) and rEffect[1] ~= "" then
-        window.shortlabel.setValue(rEffect[1]);
+        if rEffect[1]:match("^FROMAURA") and rEffect[2] then
+            window.shortlabel.setValue(rEffect[1] .. "; " ..rEffect[2]);
+        else
+            window.shortlabel.setValue(rEffect[1]);
+        end
     end
 end
 
