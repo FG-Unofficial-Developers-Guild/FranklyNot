@@ -1,46 +1,40 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!--
-  	Author: Ryan Hagelstrom
-	Copyright � 2022
-	This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-	https://creativecommons.org/licenses/by-sa/4.0/
+Author: Ryan Hagelstrom
+Copyright � 2022
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+https://creativecommons.org/licenses/by-sa/4.0/
 -->
 <root>
-  <windowclass name="client_ct_entry" merge="join">
-        <sheetdata>
-            <string_ct_entry_effects name="summary_effects" merge="join">
-                <script file="ct/scripts/ct_effect_summary_fn.lua"/>
-		    </string_ct_entry_effects>
-        </sheetdata>
-    </windowclass>
-
+	<windowclass name="client_ct_entry" merge="join">
+		<sheetdata>
+			<string_ct_entry_effects name="summary_effects" merge="join">
+				<script file="ct/scripts/ct_effect_summary_fn.lua" />
+			</string_ct_entry_effects>
+		</sheetdata>
+	</windowclass>
 	<windowclass name="clientct_effect" merge="join">
 		<sheetdata>
-
 			<string_clientct_effect name="label" merge="join">
-                <script file="ct/scripts/ct_effectlabel_fn.lua"/>
-            </string_clientct_effect>
-
-            <string_clientct_effect_fn name="shortlabel" merge="join">
-                <script>
-                    function onGainFocus()
-                        window.label.setFocus();
-                    end
-                </script>
-            </string_clientct_effect_fn>
-
+				<script file="ct/scripts/ct_effectlabel_fn.lua" />
+			</string_clientct_effect>
+			<string_clientct_effect_fn name="shortlabel" merge="join">
+				<script>
+					function onGainFocus()
+					    indow.label.setFocus();
+					end
+				</script>
+			</string_clientct_effect_fn>
 			<string_ct_effect_targets name="shorttarget_summary" merge="join">
-                <anchored>
-                    <top parent="shortlabel" />
-                    <right parent="shortlabel" />
-                </anchored>
-                <script file="ct/scripts/ct_target_summary_fn.lua"/>
-            </string_ct_effect_targets>
-
-           <string_ct_effect_targets name="target_summary" merge="join">
-                <script file="ct/scripts/ct_target_summary_fn.lua"/>
-            </string_ct_effect_targets>
-
+				<anchored>
+					<top parent="shortlabel" />
+					<right parent="shortlabel" />
+				</anchored>
+				<script file="ct/scripts/ct_target_summary_fn.lua" />
+			</string_ct_effect_targets>
+			<string_ct_effect_targets name="target_summary" merge="join">
+				<script file="ct/scripts/ct_target_summary_fn.lua" />
+			</string_ct_effect_targets>
 		</sheetdata>
 	</windowclass>
 </root>

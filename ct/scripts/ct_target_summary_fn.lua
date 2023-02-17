@@ -7,11 +7,11 @@ function onInit()
         super.onInit();
     end
     onTargetsChanged();
-	local node = window.getDatabaseNode();
-	DB.addHandler(DB.getPath(node, "targets"), "onChildAdded", onTargetsChanged);
-	DB.addHandler(DB.getPath(node, "targets.*"), "onChildUpdate", onTargetsChanged);
-	DB.addHandler(DB.getPath(node, "targets"), "onChildDeleted", onTargetsChanged);
-	DB.addHandler(DB.getPath(node, "friendfoe"), "onUpdate", onTargetsChanged);
+    local node = window.getDatabaseNode();
+    DB.addHandler(DB.getPath(node, 'targets'), 'onChildAdded', onTargetsChanged);
+    DB.addHandler(DB.getPath(node, 'targets.*'), 'onChildUpdate', onTargetsChanged);
+    DB.addHandler(DB.getPath(node, 'targets'), 'onChildDeleted', onTargetsChanged);
+    DB.addHandler(DB.getPath(node, 'friendfoe'), 'onUpdate', onTargetsChanged);
     if window.label.isLong() then
         window.label.makeLong();
     else
@@ -24,10 +24,10 @@ function onClose()
         super.onClose();
     end
     local node = window.getDatabaseNode();
-	DB.removeHandler(DB.getPath(node, "targets"), "onChildAdded", onTargetsChanged);
-	DB.removeHandler(DB.getPath(node, "targets.*"), "onChildUpdate", onTargetsChanged);
-	DB.removeHandler(DB.getPath(node, "targets"), "onChildDeleted", onTargetsChanged);
-	DB.removeHandler(DB.getPath(node, "friendfoe"), "onUpdate", onTargetsChanged);
+    DB.removeHandler(DB.getPath(node, 'targets'), 'onChildAdded', onTargetsChanged);
+    DB.removeHandler(DB.getPath(node, 'targets.*'), 'onChildUpdate', onTargetsChanged);
+    DB.removeHandler(DB.getPath(node, 'targets'), 'onChildDeleted', onTargetsChanged);
+    DB.removeHandler(DB.getPath(node, 'friendfoe'), 'onUpdate', onTargetsChanged);
 end
 
 function onTargetsChanged()

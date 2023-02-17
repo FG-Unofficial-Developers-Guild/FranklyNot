@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!--
-  	Author: Ryan Hagelstrom
-	Copyright � 2022
-	This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-	https://creativecommons.org/licenses/by-sa/4.0/
+Author: Ryan Hagelstrom
+Copyright � 2022
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+https://creativecommons.org/licenses/by-sa/4.0/
 -->
 <root release="3.0" version="3">
-	<announcement text="Frankly Not v1.2\rby Ryan Hagelstrom 2022" font="emotefont" icon="FranklyNot"/>
+	<announcement text="Frankly Not v1.3\rby Ryan Hagelstrom 2022" font="emotefont" icon="FranklyNot" />
 	<properties>
-    	<loadorder>125</loadorder>
+		<loadorder>125</loadorder>
 		<name>Feature: Frankly Not</name>
-		<version>v1.2</version>
+		<version>v1.3</version>
 		<author>Ryan Hagelstrom</author>
 		<description>Don't display verbose effects in CT and chat</description>
 	</properties>
 	<base>
-			<icon name="FranklyNot" file ="graphics/icons/FranklyNot.png" />
-			<includefile source="strings/strings_frankly_not.xml" />
-			<includefile source="ct/ct_host_entry_section_fn.xml" />
-			<includefile source="ct/ct_client_entry_selection_fn.xml" />
-			<includefile source="ct/template_ct_entry_selection.xml" />
-    		<script name="FranklyNot" file="scripts/frankly_not.lua" />
-  	</base>
+		<icon name="FranklyNot" file="graphics/icons/FranklyNot.png" />
+		<includefile source="strings/strings_frankly_not.xml" />
+		<includefile source="ct/ct_host_entry_section_fn.xml" />
+		<includefile source="ct/ct_client_entry_selection_fn.xml" />
+		<includefile source="ct/template_ct_entry_selection.xml" />
+		<script name="FranklyNot" file="scripts/frankly_not.lua" />
+	</base>
 </root>
