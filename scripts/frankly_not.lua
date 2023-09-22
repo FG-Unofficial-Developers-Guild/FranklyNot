@@ -42,14 +42,14 @@ function replaceEffectShortNameinMessage(sMsg)
 end
 
 function customAddChatMessage(rMsg)
-    if OptionsManager.isOption('FRANKLY_NOT_PLAYER', 'on') then
+    if OptionsManager.isOption('FRANKLY_NOT_PLAYER', 'on') and rMsg.txt then
         rMsg.text = replaceEffectShortNameinMessage(rMsg.text);
     end
     addChatMessage(rMsg);
 end
 
 function customDeliverChatMessage(rMsg, sUser)
-    if OptionsManager.isOption('FRANKLY_NOT_PLAYER', 'on') then
+    if OptionsManager.isOption('FRANKLY_NOT_PLAYER', 'on') and rMsg.txt then
         rMsg.text = replaceEffectShortNameinMessage(rMsg.text);
     end
     deliverChatMessage(rMsg, sUser);
