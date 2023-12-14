@@ -36,11 +36,7 @@ function onEffectsChanged()
             sEffect = sEffect:gsub('%[D:[^%]]*%]$', '');
             local rEffect = EffectManager.parseEffect(sEffect);
             if next(rEffect) and rEffect[1] ~= '' then
-                if rEffect[1]:match('^FROMAURA') and rEffect[2] then
-                    sEffects = sEffects .. rEffect[1] .. '; ' .. rEffect[2];
-                else
-                    sEffects = sEffects .. rEffect[1];
-                end
+                sEffects = sEffects .. rEffect[1];
                 if sDur then
                     sEffects = sEffects .. ' ' .. sDur;
                 end

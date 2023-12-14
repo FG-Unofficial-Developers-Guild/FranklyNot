@@ -14,8 +14,14 @@ function onInit()
     Comm.addChatMessage = customAddChatMessage;
     Comm.deliverChatMessage = customDeliverChatMessage;
 
-    OptionsManager.registerOption2('FRANKLY_NOT_PLAYER', true, 'option_header_client', 'option_Frankly_Not_Player', 'option_entry_cycler',
-                                   {labels = 'option_val_off', values = 'off', baselabel = 'option_val_on', baseval = 'on', default = 'on'});
+    OptionsManager.registerOption2('FRANKLY_NOT_PLAYER', true, 'option_header_client', 'option_Frankly_Not_Player',
+                                   'option_entry_cycler', {
+        labels = 'option_val_off',
+        values = 'off',
+        baselabel = 'option_val_on',
+        baseval = 'on',
+        default = 'on'
+    });
 end
 
 function onClose()
@@ -31,11 +37,7 @@ function replaceEffectShortNameinMessage(sMsg)
             sEffect = sEffect:gsub('^%s*Effect%s*%[\'', ''):gsub('\'%]$', '');
             local rEffect = EffectManager.parseEffect(sEffect);
             if next(rEffect) and rEffect[1] ~= '' then
-                if rEffect[1]:match('^FROMAURA') and rEffect[2] then
-                    sEffect = rEffect[1] .. '; ' .. rEffect[2];
-                else
-                    sEffect = rEffect[1];
-                end
+                sEffect = rEffect[1];
                 sReturn = sMsg:gsub('^%s*Effect%s*%[[^%]]*%]', 'Effect [\'' .. sEffect .. '\']');
             end
         end
@@ -44,14 +46,14 @@ function replaceEffectShortNameinMessage(sMsg)
 end
 
 function customAddChatMessage(rMsg)
-    if OptionsManager.isOption('FRANKLY_NOT_PLAYER', 'on') and rMsg.txt then
+    if OptionsManager.isOption('FRANKLY_NOT_PLAYER', 'on') and rMsg.text then
         rMsg.text = replaceEffectShortNameinMessage(rMsg.text);
     end
     addChatMessage(rMsg);
 end
 
 function customDeliverChatMessage(rMsg, sUser)
-    if OptionsManager.isOption('FRANKLY_NOT_PLAYER', 'on') and rMsg.txt then
+    if OptionsManager.isOption('FRANKLY_NOT_PLAYER', 'on') and rMsg.text then
         rMsg.text = replaceEffectShortNameinMessage(rMsg.text);
     end
     deliverChatMessage(rMsg, sUser);
