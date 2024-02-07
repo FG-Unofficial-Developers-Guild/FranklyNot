@@ -1,7 +1,7 @@
 
 # Frankly Not
 
-[![Build FG Extension](https://github.com/rhagelstrom/FranklyNot/actions/workflows/create-release.yml/badge.svg)](https://github.com/rhagelstrom/FranklyNot/actions/workflows/create-release.yml) [![Luacheckrc](https://github.com/rhagelstrom/FranklyNot/actions/workflows/luacheck.yml/badge.svg)](https://github.com/rhagelstrom/FranklyNot/actions/workflows/luacheck.yml)
+[![Build FG Extension](https://github.com/rhagelstrom/FranklyNot/actions/workflows/create-release.yml/badge.svg)](https://github.com/rhagelstrom/FranklyNot/actions/workflows/create-release.yml) [![Luacheckrc](https://github.com/rhagelstrom/FranklyNot/actions/workflows/luacheck.yml/badge.svg)](https://github.com/rhagelstrom/FranklyNot/actions/workflows/luacheck.yml) [![Markdownlint](https://github.com/rhagelstrom/FranklyNot/actions/workflows/markdownlint.yml/badge.svg)](https://github.com/rhagelstrom/FranklyNot/actions/workflows/markdownlint.yml)
 
 **Current Version:** 1.5
 **Updated:** 12/13/23
